@@ -8,7 +8,6 @@
     # POST /elements
     def create
       @element = @post.elements.build(element_params)
-
       if @element.save
         notice = nil
       else
@@ -19,17 +18,14 @@
 
     # PATCH/PUT /elements/1
     def update
-      if @element.update(element_params)
-        redirect_to @element, notice: 'Element was successfully updated.'
-      else
-        render :edit
-      end
+      @element.update(element_params)
+      redirect_to edit_post_path(@element.post)
     end
 
     # DELETE /elements/1
     def destroy
       @element.destroy
-      redirect_to elements_url, notice: 'Element was successfully destroyed.'
+      redirect_to edit_post_path(@element.post)
     end
 
     private
@@ -45,7 +41,7 @@
 
       # Only allow a trusted parameter "white list" through.
       def element_params
-        params.require(:element).permit(:element_type, :content)
+        params.require(:element).permit(:element_type, :content, :image)
       end
   end
 end

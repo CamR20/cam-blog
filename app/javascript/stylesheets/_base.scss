@@ -1,0 +1,31 @@
+.authors{
+  .paragraph {
+    transition: background-colour 0.5s ease;
+    &:hover {
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+  }
+  .image {
+    text-align: center;
+
+    img{
+    max-width: 80%;
+    }
+  }
+
+  .post-card {
+    .header-img {
+      width: 100%;
+      height: 80px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+
+#elements {
+  list-style: none;
+  padding-left: 0;
+}
