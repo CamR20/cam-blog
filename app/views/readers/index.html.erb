@@ -1,0 +1,14 @@
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <img src="<%= url_for(post.header_image) %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.description %></p>
+          <a href="#" class="btn btn-primary">Read Post</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
